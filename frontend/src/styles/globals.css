@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    --background: 0 0% 6%;
+    --foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 262.1 83.3% 57.8%;
+  }
+
+  * {border-color: hsl(var(--border));}
+  body {
+    @apply bg-surface text-white antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', system-ui, sans-serif;
+  }
+  html { height: 100%; overflow: hidden; }
+  body { height: 100%; overflow: hidden; }
+}
+
+@layer components {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #3a3a3c transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar { width: 4px; }
+  .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #3a3a3c;
+    border-radius: 4px;
+  }
+
+  .message-bubble-sent {
+    @apply bg-brand-600 text-white rounded-2xl rounded-br-sm px-4 py-2 max-w-xs lg:max-w-md;
+  }
+  .message-bubble-received {
+    @apply bg-surface-1 text-white rounded-2xl rounded-bl-sm px-4 py-2 max-w-xs lg:max-w-md;
+  }
+
+  .glass {
+    @apply bg-surface-1/80 backdrop-blur-xl border border-white/5;
+  }
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200
+           text-zinc-400 hover:text-white hover:bg-surface-2 cursor-pointer;
+  }
+  .nav-item-active {
+    @apply bg-brand-600/20 text-brand-400 hover:bg-brand-600/25 hover:text-brand-300;
+  }
+}
