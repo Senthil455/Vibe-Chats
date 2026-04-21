@@ -1,10 +1,10 @@
 import { Server, Socket } from 'socket.io';
 import http from 'http';
 import jwt from 'jsonwebtoken';
-import { User } from './models/user.model';
-import { Message } from './models/message.model';
-import { Chat } from './models/chat.model';
-import { Notification } from './models/notification.model';
+import { User } from '../models/user.model';
+import { Message } from '../models/message.model';
+import { Chat } from '../models/chat.model';
+import { Notification } from '../models/notification.model';
 import {
   setOnlineStatus,
   setTyping,
